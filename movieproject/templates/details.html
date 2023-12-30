@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="shadow card" style="padding-top:20px">
+    <div class="row mx-auto">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-center">
+            <img src="{{movie.img.url}}" height="450px" width="auto">
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-8 text-center">
+            <div class="shadow card">
+                <table class="table my_custom_table" style="border:hidden" >
+                    <thead class="my_custom_thead">
+                        <tr>
+                            <th><br>
+                                <h5 class="card-title">{{movie.name}} ({{movie.year}})</h5><br>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><br>
+                                <h6 class="card-text">Director : {{movie.director}}</h6><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">
+                                <h6>Synopsis</h6><br>
+                                <p class="card-text">{{movie.desc}}</p><br>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><br>
+            <div class="mx-auto">
+                <a class="btn btn-warning" href="{% url 'movie_app:update' movie.id %}">Update</a>
+                <a class="btn btn-danger" href="{% url 'movie_app:delete' movie.id %}">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

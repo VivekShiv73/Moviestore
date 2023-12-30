@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container" style="padding-top:20px">
+    <div class="col">
+        <div class="container">
+          <div class="row mx-auto" >
+                <div class="card text-center" style="min-width:18rem">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                    </form>
+                  </div>
+              </div>
+          </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
